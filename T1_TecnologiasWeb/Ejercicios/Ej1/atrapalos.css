@@ -7,6 +7,10 @@ nav {
     color: white;
 }
 
-li {
+nav:li {
     color: black;
+}
+
+span {
+    font-weight: bold;
 }
