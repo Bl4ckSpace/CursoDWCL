@@ -1,0 +1,12 @@
+nav {
+    display: flex;
+    justify-content: space-between; /* Separa logo y menú */
+    align-items: center;
+    background-color: #333;
+    padding: 1rem 2rem;
+    color: white;
+}
+
+li {
+    color: black;
+}
