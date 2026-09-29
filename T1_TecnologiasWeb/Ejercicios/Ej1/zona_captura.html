@@ -1,29 +1,43 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Zona de captura</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Zona de captura · Atrápalos</title>
     <link rel="stylesheet" href="atrapalos.css">
 </head>
 <body>
-    <div>
-        <nav>
-            <ul>
-                <li><a href="explicacion.html">Explicación</a></li>
-            </ul>
-            <ul>
-                <li><a href="zona_captura.html">Zona de captura</a></li>
-            </ul>
-            <ul>
-                <li><a href="museo.html">Museo</a></li>
-            </ul>
-        </nav>
-</div>
-    <label>Nombre: </label>
-    <input type="text">
-    <label>Edad: </label>
-    <input type="text">
-    <label>Color: </label>
-    <input type="text">
+    <a class="skip-link" href="#main">Saltar al contenido</a>
+    <nav aria-label="Secciones del juego">
+        <ul>
+            <li><a href="explicacion.html">Explicación</a></li>
+            <li><a href="zona_captura.html" aria-current="page">Zona de captura</a></li>
+            <li><a href="museo.html">Museo</a></li>
+        </ul>
+    </nav>
+
+    <main id="main">
+        <h1>Zona de captura</h1>
+        <p>Describe al monstruo. Al pulsar «Capturar» comprobaremos si estás cerca del instituto.</p>
+
+        <form id="form-captura">
+            <div>
+                <label for="monstruo-nombre">Nombre:</label>
+                <input type="text" id="monstruo-nombre" required>
+            </div>
+            <div>
+                <label for="monstruo-edad">Edad:</label>
+                <input type="number" id="monstruo-edad" min="0" required>
+            </div>
+            <div>
+                <label for="monstruo-color">Color:</label>
+                <input type="color" id="monstruo-color" value="#8B6FC7">
+            </div>
+            <button type="submit">Capturar</button>
+            <p id="estado-captura" role="status" aria-live="polite"></p>
+        </form>
+    </main>
+
+    <script src="atrapalos.js"></script>
 </body>
 </html>
