@@ -1,0 +1,76 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    display: flex;
+    flex-direction: row;
+    padding: 1%;
+    margin-bottom: 5%;
+    justify-content: center;
+    background-color: #001C8BD2;
+    color: white;
+    font-size: 150%;
+    font-weight: bold;
+    font-family: Verdana;
+}
+
+.operacion {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 10px;
+    border-radius: 5px;
+}
+
+input {
+    border-radius: 5px;
+    border: 1px solid #001C8BD2
+}
+
+select, option {
+    border-radius: 3px;
+
+}
+
+.resultado { /* Contenedor */
+    display: flex;
+    justify-content: center;
+    margin-top: 5%;
+}
+
+#resultado { /* Campo de texto */
+    display: flex;
+    border: 3px solid #001C8BD2;
+    font-size: 130%;
+    font-weight: bold;
+    padding: 5px 10px;
+    width: 150px;
+    text-align: center;
+}
+
+#suma { background: #009acd;}
+
+#resta { background: red;}
+
+#multiplicacion { background: green; }
+
+#division { background: yellow; }
+
+button {
+    border: 3px solid #001C8BD2;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 20px;
+    background-color: deepskyblue;
+    color: darkblue;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: dodgerblue;
+}
+
+button:active {
+    background-color: steelblue;
+}

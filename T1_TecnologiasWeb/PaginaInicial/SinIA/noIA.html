@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Calculadora sencilla (hecha a mano)</title>
+    <link rel="stylesheet" href="noIA.css">
+</head>
+<body>
+    <header>Calculadora</header>
+    <div class="operacion">
+        <input type="number" class="operacion" id="num1">
+        <select id="opciones">
+            <option value="+" id="suma">+</option>
+            <option value="-" id="resta">-</option>
+            <option value="x" id="multiplicacion">x</option>
+            <option value="/" id="division">/</option>
+        </select>
+        <input type="number" class="input" id="num2">
+        <div id="calcular">
+            <button onclick="calcular()">=</button>
+        </div>
+    </div>
+    <div class="resultado">
+        <input type="number" id="resultado" readonly>
+    </div>
+
+    <script src="noIA.js"></script>
+</body>
+</html>

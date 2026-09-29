@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Canvas 2</title>
+</head>
+<body>
+    <label for="alumno">Nombre: </label><input type="text" id="alumno" placeholder="Nombre del alumno">
+    <input type="button" value="Guardar" onclick="guardarAlumno()">
+    <input type="button" value="Borrar" onclick="borrarAlumno()">
+    <p id="textoAlumnos"></p>
+
+<script>
+    let nombreAlumno = document.getElementById('alumno');
+    let id = localStorage.length;
+
+    function guardarAlumno() {
+        localStorage.setItem(id,nombreAlumno.)
+
+        }
+    }
+
+    function borrarAlumno() {
+        localStorage.removeItem('alumno');
+    }
+
+    function mostrarAlumnos() {
+        alumnosDatos="";
+        for (let i = 0; i < localStorage.length; i++) {
+            let clave = localStorage.key(i);
+            alumnosDatos+=localStorage.getItem(clave);+"<br>"
+        }
+        let parrafo=document.getElementById("textoAlumnos");
+        parrafo.innerHTML=alumnosDatos;
+    }
+    mostrarAlumnos()
+</script>
+</body>
+</html>
