@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Zona de captura</title>
+    <title>Zona de captura · Atrápalos</title>
     <link rel="stylesheet" href="atrapalos.css">
 </head>
 <body>
@@ -11,7 +11,7 @@
     <nav aria-label="Secciones del juego">
         <ul>
             <li><a href="explicacion.html">Explicación</a></li>
-            <li><a href="zona_captura.html">Zona de captura</a></li>
+            <li><a href="zona_captura.html" aria-current="page">Zona de captura</a></li>
             <li><a href="museo.html">Museo</a></li>
         </ul>
     </nav>
@@ -34,7 +34,7 @@
                 <input type="color" id="monstruo-color" value="#8B6FC7">
             </div>
             <button type="submit">Capturar</button>
-            <p id="estado-captura"></p>
+            <p id="estado-captura" role="status" aria-live="polite"></p>
         </form>
     </main>
 
