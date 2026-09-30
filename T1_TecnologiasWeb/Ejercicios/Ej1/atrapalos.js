@@ -1,8 +1,6 @@
-// atrapalos.js — lógica compartida por zona_captura.html y museo.html
 (function () {
     "use strict";
 
-    // AJUSTA estas coordenadas a las de tu instituto real.
     var INSTITUTO = { lat: 40.4168, lng: -3.7038 }; // Placeholder: centro de Madrid
     var RADIO_METROS = 200;
     var STORAGE_KEY = "atrapalos:museo";
@@ -28,7 +26,6 @@
         localStorage.setItem(STORAGE_KEY, JSON.stringify(lista));
     }
 
-    // ---- Zona de captura ----
     var form = document.getElementById("form-captura");
     if (form) {
         form.addEventListener("submit", function (evento) {
@@ -69,7 +66,6 @@
         });
     }
 
-    // ---- Museo ----
     var grid = document.getElementById("museo-grid");
     if (grid) {
         var lista = cargarMuseo();

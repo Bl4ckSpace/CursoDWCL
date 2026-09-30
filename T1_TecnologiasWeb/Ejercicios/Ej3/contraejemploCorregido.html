@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <title>Mi perfil (contraejemplo corregido)</title>
+    <link href="contraejemploCorregido.css" rel="stylesheet">
+</head>
+<body>
+<div class="card" id="app">
+    <h1>Mi perfil</h1>
+    <label>Nombre <input id="nombre" value="Ana Pérez"></label>
+    <label>Correo <input id="correo" value="ana@correo.com"></label>
+    <div class="botones">
+        <button id="guardar">Guardar</button>
+        <button id="eliminar">Eliminar cuenta</button>
+    </div>
+</div>
+<script>
+    // Problema 1: guardar no muestra ningún estado (ni "guardando…" ni "guardado").
+    document.getElementById('guardar').onclick=function(){ /* guarda en silencio */ };
+    // Problema 2: eliminar borra al instante, sin confirmación ni deshacer.
+    document.getElementById('eliminar').onclick=function(){
+        document.getElementById('app').innerHTML='';
+    };
+</script>
+</body>
+</html>

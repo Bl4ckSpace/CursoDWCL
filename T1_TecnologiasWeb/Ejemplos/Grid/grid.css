@@ -1,0 +1,16 @@
+#contenedor {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+#id1 { background-color: red;    grid-row: 1; grid-column: 1 / span 2; }
+#id3 { background-color: blue;   grid-row: 1; grid-column: 3; }
+#id4 { background-color: orange; grid-row: 1; grid-column: 4; }
+
+#id2 { background-color: green;  grid-row: 2; grid-column: 1 / span 3; }
+#id5 { background-color: yellow; grid-row: 2; grid-column: 4; }
+
+#id6 { background-color: white;  grid-row: 3; grid-column: 1; }
+#id7 { background-color: purple; grid-row: 3; grid-column: 2; }
+
+#menuIzquierda { grid-row: 4; grid-column: 1 / span 3; }

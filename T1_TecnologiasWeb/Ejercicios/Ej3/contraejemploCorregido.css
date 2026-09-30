@@ -1,0 +1,44 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f4f4;
+    padding: 16px;
+}
+
+.card {
+    max-width: 400px;
+    margin: 24px auto;
+    background: white;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 20px;
+}
+
+label {
+    display: block;
+    margin-top: 12px;
+}
+
+input {
+    width: 100%;
+    padding: 8px;
+    margin-top: 4px;
+    box-sizing: border-box;
+}
+
+.botones {
+    display: flex;
+    gap: 6px;
+    margin-top: 20px;
+}
+
+button {
+    flex: 1;
+    padding: 10px;
+    border: 0;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+#guardar { background: #1976d2; }
+#eliminar { background: #d32f2f; }
