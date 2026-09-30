@@ -42,3 +42,21 @@ button {
 
 #guardar { background: #1976d2; }
 #eliminar { background: #d32f2f; }
+
+button:disabled {
+    opacity: 0.6;
+    cursor: default;
+}
+
+#estado {
+    margin-top: 10px;
+    font-size: 0.9rem;
+    color: #1976d2;
+    min-height: 1.2em;
+}
+
+#mensaje-eliminado button {
+    background: #1976d2;
+    padding: 6px 10px;
+    font-size: 0.9rem;
+}

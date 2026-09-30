@@ -3,25 +3,63 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-    <title>Mi perfil (contraejemplo corregido)</title>
+    <title>Mi perfil (corregido)</title>
     <link href="contraejemploCorregido.css" rel="stylesheet">
 </head>
 <body>
 <div class="card" id="app">
-    <h1>Mi perfil</h1>
-    <label>Nombre <input id="nombre" value="Ana Pérez"></label>
-    <label>Correo <input id="correo" value="ana@correo.com"></label>
-    <div class="botones">
-        <button id="guardar">Guardar</button>
-        <button id="eliminar">Eliminar cuenta</button>
+    <div id="perfil-contenido">
+        <h1>Mi perfil</h1>
+        <label>Nombre <input id="nombre" value="Ana Pérez"></label>
+        <label>Correo <input id="correo" value="ana@correo.com"></label>
+        <div class="botones">
+            <button id="guardar">Guardar</button>
+            <button id="eliminar">Eliminar cuenta</button>
+        </div>
+        <p id="estado" role="status" aria-live="polite"></p>
+    </div>
+    <div id="mensaje-eliminado" hidden>
+        <p>Cuenta eliminada. <button id="deshacer">Deshacer</button></p>
     </div>
 </div>
 <script>
-    // Problema 1: guardar no muestra ningún estado (ni "guardando…" ni "guardado").
-    document.getElementById('guardar').onclick=function(){ /* guarda en silencio */ };
-    // Problema 2: eliminar borra al instante, sin confirmación ni deshacer.
-    document.getElementById('eliminar').onclick=function(){
-        document.getElementById('app').innerHTML='';
+    /* Regla 1: Visibilidad del estado del sistema.
+       El usuario ve que está guardando y luego que se ha guardado. */
+    var estado = document.getElementById('estado');
+    var botonGuardar = document.getElementById('guardar');
+
+    botonGuardar.onclick = function () {
+        botonGuardar.disabled = true;
+        estado.textContent = 'Guardando…';
+        setTimeout(function () {
+            estado.textContent = 'Guardado ✓';
+            botonGuardar.disabled = false;
+        }, 700);
+    };
+
+    /* Reglas 3 y 5: Control y libertad del usuario y prevención de errores.
+       Se pide confirmación antes de una acción destructiva, y tras eliminar
+       se puede deshacer durante unos segundos (el contenido nunca se destruye). */
+    var perfil = document.getElementById('perfil-contenido');
+    var mensajeEliminado = document.getElementById('mensaje-eliminado');
+    var temporizadorDeshacer = null;
+
+    document.getElementById('eliminar').onclick = function () {
+        var confirmado = confirm('¿Seguro que quieres eliminar tu cuenta? Podrás deshacerlo solo durante unos segundos.');
+        if (!confirmado) return;
+
+        perfil.hidden = true;
+        mensajeEliminado.hidden = false;
+
+        temporizadorDeshacer = setTimeout(function () {
+            document.getElementById('deshacer').disabled = true;
+        }, 5000);
+    };
+
+    document.getElementById('deshacer').onclick = function () {
+        clearTimeout(temporizadorDeshacer);
+        mensajeEliminado.hidden = true;
+        perfil.hidden = false;
     };
 </script>
 </body>

@@ -1,0 +1,23 @@
+div {
+    background-color: lightslategrey;
+    color: white;
+    font-size: 150%;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+}
+
+#cuadricula {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    background-color: white;
+}
+
+#id1 {
+    grid-column: span 3;
+}
+
+#id2 {
+    grid-row: span 2
+}
+
