@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h2>Tu ubicación actual: </h2>
+    <p id="ubicacion">Esperando ...</p>
+    <button onclick="obtenerLocalizacion()">Mostrar ubicación</button>
+</body>
+    <script>
+        function obtenerLocalizacion() {
+            if (navigator.geolocation) { // Comprobar si el navegador soporta geolocalización
+                navigator.geolocation.getCurrentPosition((posicion)=>{
+                    const lat = posicion.coords.latitude;
+                    const lon = posicion.coords.longitude;
+                    document.getElementById('ubicacion').textContent = "Latitud: " + lat+", longitud: "+lon;
+                }, casoError) // Solicitar la ubicación del usuario
+            } else {
+                document.getElementById('ubicacion').textContent = 'Geolocalizacion ';
+            }
+        }
+
+        /*
+        function casoExito(posicion) {
+            const lat = posicion.coords.latitude;
+            const lon = posicion.coords.longitude;
+            document.getElementById('ubicacion').textContent = "Latitud: " + lat+", longitud: "+lon;
+        }
+        */
+        function casoError() {
+            alert("Fallo");
+        }
+    </script>
+</html>
